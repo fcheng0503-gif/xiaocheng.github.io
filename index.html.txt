@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的全功能工作台</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fb;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #777777;
+            --primary-color: #4f46e5;
+            --hover-shadow: rgba(79, 70, 229, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            color: #111827;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* 分类区块 */
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.35rem;
+            color: #1f2937;
+            margin-bottom: 18px;
+            padding-left: 12px;
+            border-left: 5px solid var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* 网格布局 */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px var(--hover-shadow);
+            border-color: var(--primary-color);
+        }
+
+        .card .title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .card .desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* 预留/特殊卡片 */
+        .card.dashed {
+            border-style: dashed;
+            background: transparent;
+            justify-content: center;
+            align-items: center;
+            min-height: 106px;
+        }
+        .card.dashed .title {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>我的全功能控制台</h1>
+        <p>多维分类 · 快速跳转 · 后续自由扩展</p>
+    </header>
+
+    <section class="category-section">
+        <h2 class="category-title">🤖 AI 创作与生产力</h2>
+        <div class="links-grid">
+            <a href="https://chatgpt.com" target="_blank" class="card">
+                <div class="title">ChatGPT</div>
+                <div class="desc">强悍的AI对话与文本创作工具，写方案、调代码必备。</div>
+            </a>
+            <a href="https://www.midjourney.com" target="_blank" class="card">
+                <div class="title">Midjourney</div>
+                <div class="desc">顶尖的AI绘画与艺术图像生成工具。</div>
+            </a>
+            <a href="https://claude.ai" target="_blank" class="card">
+                <div class="title">Claude</div>
+                <div class="desc">长文本处理与逻辑推理极强的AI助手。</div>
+            </a>
+<a href="https://gemini.google.com/app" target="_blank" class="card">
+    <div class="title">Gemini</div>
+    <div class="desc">顶尖的代码编辑AI助手。</div>
+<a href="https://labs.google/fx/zh/tools/flow" target="_blank" class="card">
+    <div class="title">FLow</div>
+    <div class="desc">强大的视频编辑创作AI。</div>
+</a>
+<a href="https://www.kimi.com/slides" target="_blank" class="card">
+    <div class="title">Kimi</div>
+    <div class="desc">PPT制作与生成。</div>
+</a>
+<a href="https://www.doubao.com/" target="_blank" class="card">
+    <div class="title">豆包</div>
+    <div class="desc">无聊可以使用。</div>
+</a>
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="category-title">🎬 影视与视频娱乐</h2>
+        <div class="links-grid">
+            <a href="https://www.bilibili.com" target="_blank" class="card">
+                <div class="title">哔哩哔哩 (Bilibili)</div>
+                <div class="desc">国内领先的年轻人文化社区与高质量视频弹幕网站。</div>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="card">
+                <div class="title">YouTube</div>
+                <div class="desc">全球最大的视频分享平台，看教程与国外视频必备。</div>
+            </a>
+            <a href="https://www.netflix.com" target="_blank" class="card">
+                <div class="title">Netflix (网飞)</div>
+                <div class="desc">全球顶尖的流媒体平台，提供高质量电影美剧。</div>
+            </a><
+<a href="https://adzhp.cc/?ref=www.zjnav.com" target="_blank" class="card">
+    <div class="title">影视大全</div>
+    <div class="desc">涵盖市面所有影视APP（免费观看）。</div>
+</a><a href="https://v.qq.com" target="_blank" class="card">
+    <div class="title">腾讯视频</div>
+    <div class="desc">海量热门大剧、独播综艺与高清电影首播平台。</div>
+</a>
+<a href="https://www.iqiyi.com" target="_blank" class="card">
+    <div class="title">爱奇艺</div>
+    <div class="desc">优质华语剧集、热门动漫及自制综艺随心看。</div>
+</a>
+<a href="https://www.youku.com" target="_blank" class="card">
+    <div class="title">优酷视频</div>
+    <div class="desc">经典老剧、独家新剧与精彩大片视频平台。</div>
+</a>
+<a href="https://www.mgtv.com" target="_blank" class="card">
+    <div class="title">芒果TV</div>
+    <div class="desc">湖南卫视核心大牌综艺与独家青春剧集阵地。</div>
+</a>
+        </div>
+    </section>
+<section class="category-section">
+    <h2 class="category-title">📱 短视频与社交平台</h2>
+    <div class="links-grid">
+        <a href="https://www.douyin.com" target="_blank" class="card">
+            <div class="title">抖音</div>
+            <div class="desc">大屏刷短视频、看好玩直播与潮流热点。</div>
+        </a>
+        <a href="https://www.xiaohongshu.com" target="_blank" class="card">
+            <div class="title">小红书</div>
+            <div class="desc">标记我的生活，发现种草、穿搭与实用攻略。</div>
+        </a>
+        <a href="https://www.kuaishou.com" target="_blank" class="card">
+            <div class="title">快手</div>
+            <div class="desc">拥抱每一种生活，接地气的高清短视频社区。</div>
+        </a>
+    </div>
+</section>
+
+    <section class="category-section">
+        <h2 class="category-title">🎨 创意与界面设计</h2>
+        <div class="links-grid">
+            <a href="https://www.figma.com" target="_blank" class="card">
+                <div class="title">Figma</div>
+                <div class="desc">基于浏览器的实时协作UI/UX设计工具。</div>
+            </a>
+            <a href="https://dribbble.com" target="_blank" class="card">
+                <div class="title">Dribbble</div>
+                <div class="desc">全球顶尖设计师的作品分享与创意灵感社区。</div>
+            </a>
+            <a href="https://www.behance.net" target="_blank" class="card">
+                <div class="title">Behance</div>
+                <div class="desc">Adobe旗下的创意作品在线展示与寻找灵感平台。</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 完整替换：高清素材与资源 -->
+<section class="category-section">
+    <h2 class="category-title">📦 高清素材与资源库</h2>
+    <div class="links-grid">
+        <a href="https://huaban.com" target="_blank" class="card">
+            <div class="title">花瓣网</div>
+            <div class="desc">国内极受欢迎的创意灵感采集社区，找参考、存意向图必备（中国版 Pinterest）。</div>
+        </a>
+        <a href="https://www.znmo.com" target="_blank" class="card">
+            <div class="title">知末网</div>
+            <div class="desc">海量 3D 模型、高精贴图、施工图等室内设计及建筑表现效果图素材库。</div>
+        </a>
+        <a href="https://unsplash.com" target="_blank" class="card">
+            <div class="title">Unsplash</div>
+            <div class="desc">免费的高清无版权摄影图片素材网站，大图质量极高。</div>
+        </a>
+        <a href="https://www.freepik.com" target="_blank" class="card">
+            <div class="title">Freepik</div>
+            <div class="desc">提供海量矢量图、PSD源文件以及优质插画的综合素材库。</div>
+        </a>
+        <a href="https://www.iconfont.cn" target="_blank" class="card">
+            <div class="title">Iconfont</div>
+            <div class="desc">阿里妈妈矢量图标库，UI平面图标一网打尽。</div>
+        </a>
+    </div>
+</section>
+<!-- 完整替换：顶尖设计与灵感创意 -->
+<section class="category-section">
+    <h2 class="category-title">🏛️ 空间、建筑与创意设计</h2>
+    <div class="links-grid">
+        <a href="https://www.gooood.cn" target="_blank" class="card">
+            <div class="title">谷德设计网 (gooood)</div>
+            <div class="desc">国内极具影响力的建筑、景观、室内设计与创意人才平台。</div>
+        </a>
+        <a href="https://www.archdaily.cn" target="_blank" class="card">
+            <div class="title">ArchDaily (中文版)</div>
+            <div class="desc">全球浏览量最高的建筑设计专业网站，追踪最新案例与前沿趋势。</div>
+        </a>
+        <a href="https://www.yinjispace.com" target="_blank" class="card">
+            <div class="title">印际 (Yinjispace)</div>
+            <div class="desc">极具格调的高端室内设计与美学媒体，聚焦全球尖端名家案例。</div>
+        </a>
+        <a href="https://www.dinzd.com" target="_blank" class="card">
+            <div class="title">德国室内设计网 (DINZD)</div>
+            <div class="desc">专注高品质室内设计，国际设计大师作品与前沿趋势的超级风向标。</div>
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" class="card">
+            <div class="title">Pinterest</div>
+            <div class="desc">全球公认的视觉创意与灵感搜索引擎，做设计提案、找意向图必刷。</div>
+        </a>
+        <a href="https://www.zcool.com.cn" target="_blank" class="card">
+            <div class="title">站酷 (ZCOOL)</div>
+            <div class="desc">中国设计师互动平台，涵盖平面、UI、插画、摄影等综合设计。</div>
+        </a>
+        <a href="https://www.puxiang.com" target="_blank" class="card">
+            <div class="title">普象网</div>
+            <div class="desc">工业设计与产品创新的大本营，看优秀产品和找设计灵感必备。</div>
+        </a>
+    </div>
+</section>
+
+    <!-- 完整替换：网络加速与代理工具 -->
+<section class="category-section">
+    <h2 class="category-title">🌐 网络加速与工具</h2>
+    <div class="links-grid">
+       <a href="https://xn--9kqy92aw5h.net/#/dashboard" target="_blank" class="card">
+            <div class="title">🚀 早安云机场</div>
+            <div class="desc">我的主力梯子官网，用于日常签到、查看流量和复制订阅链接。</div>
+        </a>
+        <a href="https://61.202269.xyz/#/dashboard" target="_blank" class="card">
+            <div class="title">🛸 嘻游记</div>
+            <div class="desc">防联失备用通道，主线路断连或维护时切换使用。</div>
+        </a>
+
+        <!-- 卡片 3：常用代理客户端下载或文档 -->
+        <a href=https://liangxin.xyz/api/v1/liangxin?OwO=de5a9c48062fb569a469943315fe6345 target="_blank" class="card">
+            <div class="title">⚙️ Clash 客户端</div>
+            <div class="desc">常用的网络代理配置及开源客户端项目托管页面。</div>
+        </a>
+    </div>
+</section>
+</div>
+
+</body>
+</html>
